@@ -8,8 +8,7 @@ async function startCustomSSE() {
     const stream = response.data;
 
     stream.on('data', (chunk) => {
-      const result = chunk.toString();
-      console.info(result);
+      console.info(chunk.toString());
     });
 
     stream.on('end', () => {

@@ -17,8 +17,6 @@ const server = http.createServer((req, res) => {
     sendEvent(res, 'message', { message: 'Hello from the server' });
   }, 1000);
 
-  sendEvent(res, 'end', { message: 'End from the server' });
-
   req.on('close', () => {
     clearInterval(interval);
     console.info('Client disconnected');
