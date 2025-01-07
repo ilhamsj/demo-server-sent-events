@@ -21,7 +21,6 @@ async function startCustomSSE() {
 
     stream.on('close', async () => {
       console.info('Custom SSE close');
-      await startCustomSSE();
     });
   } catch (error) {
     console.error('Custom SSE error catch:', error);
