@@ -1,4 +1,4 @@
-import {EventSource} from 'eventsource'
+const {EventSource} = require('eventsource')
 
 const sseUrl = 'http://localhost:3030';
 
@@ -6,7 +6,7 @@ const eventSource = new EventSource(sseUrl);
 
 eventSource.onmessage = (event) => {
     const result = JSON.parse(event.data);
-    console.info(result.message);
+    console.info(result);
 };
 
 eventSource.addEventListener('custom-event', (event) => {
